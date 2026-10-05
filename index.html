@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COLETUR Transporte e Turismo | Excursões e fretamento no RS</title>
+<meta name="description" content="Excursões para compras no Paraguai, jogos na Arena e Beira-Rio, viagens religiosas e fretamento de ônibus turismo. Saídas de Guarani das Missões, Santo Ângelo, Ijuí e Cruz Alta.">
+<meta name="keywords" content="excursão Paraguai, ônibus turismo RS, fretamento Guarani das Missões, excursão Grêmio, excursão Internacional, Coletur">
+<meta name="author" content="COLETUR Transporte e Turismo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.coletur.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="COLETUR Transporte e Turismo">
+<meta property="og:description" content="Mais que uma viagem, é sobre viver. Excursões e fretamento com conforto, segurança e atendimento personalizado.">
+<meta property="og:image" content="assets/portico.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#001f3f">
+<link rel="icon" href="assets/logo-coletur.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy:   { DEFAULT:'#001f3f', 700:'#012a54', 600:'#01356b' },
+        royal:  '#0074d9',
+        cyan:   '#29b6e8',
+        gold:   '#d4af37',
+        silver: { DEFAULT:'#e0e0e0', dark:'#b0b0b0' }
+      },
+      fontFamily: {
+        display: ['Poppins','system-ui','sans-serif'],
+        body: ['Roboto','system-ui','sans-serif']
+      },
+      boxShadow: {
+        soft: '0 18px 50px -20px rgba(0,31,63,.45)',
+        lift: '0 30px 70px -25px rgba(0,31,63,.60)'
+      }
+    }
+  }
+}
+</script>
+
+<style>
+:root{
+  --navy:#001f3f; --navy-700:#012a54; --royal:#0074d9; --cyan:#29b6e8;
+  --gold:#d4af37; --silver:#e0e0e0; --silver-dark:#b0b0b0;
+}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{font-family:'Roboto',sans-serif;color:var(--navy);background:#fff;overflow-x:hidden}
+h1,h2,h3,h4,.font-display{font-family:'Poppins',sans-serif}
+
+.glass{background:rgba(255,255,255,.72);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.6)}
+.glass-dark{background:rgba(0,31,63,.55);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.16)}
+
+.eyebrow{font-family:'Poppins',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase}
+
+/* Assinatura visual: o arco do logotipo */
+.arc-mark{position:relative}
+.arc-mark::before{
+  content:"";position:absolute;left:-14px;top:50%;width:34px;height:34px;transform:translateY(-50%);
+  border:3px solid var(--cyan);border-radius:50%;border-right-color:transparent;border-bottom-color:transparent;
+  transform:translateY(-50%) rotate(-35deg);opacity:.9
+}
+.arc-divider{display:block;width:100%;height:64px}
+
+.card{transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease}
+.card:hover{transform:translateY(-8px)}
+.card-media{overflow:hidden}
+.card-media img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card:hover .card-media img{transform:scale(1.06)}
+.card .sweep{position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--royal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .5s ease}
+.card:hover .sweep{transform:scaleX(1)}
+
+.feature:hover .feature-ico{background:var(--royal);color:#fff;transform:rotate(-6deg) scale(1.06)}
+.feature-ico{transition:all .4s cubic-bezier(.2,.7,.3,1)}
+
+/* Carrossel */
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease,transform 7s linear}
+.slide.is-active{opacity:1;transform:scale(1.07)}
+.dot{width:34px;height:3px;background:rgba(255,255,255,.35);transition:background .3s,width .3s}
+.dot.is-active{background:var(--gold);width:56px}
+
+/* Rota de embarques */
+.route-line{background:repeating-linear-gradient(90deg,var(--cyan) 0 10px,transparent 10px 20px)}
+.pin{transition:transform .3s ease}
+.route-stop:hover .pin{transform:translateY(-5px)}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.is-in{opacity:1;transform:none}
+
+/* WhatsApp flutuante */
+@keyframes pulse-ring{0%{transform:scale(.9);opacity:.7}70%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+.wa-ring{animation:pulse-ring 2.4s cubic-bezier(.24,.6,.35,1) infinite}
+
+/* Chatbot */
+#chatPanel{transform:translateY(16px) scale(.96);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.2,.7,.3,1)}
+#chatPanel.is-open{transform:none;opacity:1;pointer-events:auto}
+
+input:focus-visible,button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  .slide.is-active{transform:none}
+}
+</style>
+</head>
+<body class="antialiased">
+
+<a href="#viagens" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-3 focus:left-3 focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded">Ir para as próximas viagens</a>
+
+<!-- ================= CABEÇALHO ================= -->
+<header id="header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="glass shadow-soft">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="flex items-center justify-between h-[76px] transition-all duration-500" id="headerInner">
+        <a href="#topo" class="flex items-center gap-3 shrink-0">
+          <img src="assets/logo-coletur.png" alt="COLETUR Transporte e Turismo" class="h-9 md:h-11 w-auto">
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
+          <a href="#topo" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Início</a>
+          <a href="#verao" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Verão 2027</a>
+          <a href="#viagens" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Próximos destinos</a>
+          <a href="#servicos" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Serviços</a>
+          <a href="#sobre" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Sobre nós</a>
+          <a href="#blog" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Blog</a>
+          <a href="#contato" class="text-[15px] font-medium text-navy/80 hover:text-royal transition">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20com%20a%20COLETUR."
+             target="_blank" rel="noopener"
+             class="hidden sm:inline-flex items-center gap-2 bg-navy text-white text-sm font-display font-semibold px-5 py-3 rounded-full hover:bg-royal transition-colors shadow-soft">
+            Solicitar cotação
+          </a>
+          <button id="menuBtn" class="lg:hidden w-11 h-11 grid place-items-center rounded-full bg-navy text-white" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-white/50">
+      <nav class="px-5 py-4 flex flex-col gap-1" aria-label="Navegação mobile">
+        <a href="#topo" class="py-3 font-medium border-b border-navy/10">Início</a>
+        <a href="#verao" class="py-3 font-medium border-b border-navy/10">Verão 2027</a>
+        <a href="#viagens" class="py-3 font-medium border-b border-navy/10">Próximos destinos</a>
+        <a href="#servicos" class="py-3 font-medium border-b border-navy/10">Serviços</a>
+        <a href="#sobre" class="py-3 font-medium border-b border-navy/10">Sobre nós</a>
+        <a href="#blog" class="py-3 font-medium border-b border-navy/10">Blog</a>
+        <a href="#contato" class="py-3 font-medium">Contato</a>
+        <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20com%20a%20COLETUR." target="_blank" rel="noopener" class="mt-3 text-center bg-navy text-white font-display font-semibold px-5 py-3 rounded-full">Solicitar cotação</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="topo" class="relative min-h-[100svh] flex items-end overflow-hidden bg-navy">
+  <div id="carousel" class="absolute inset-0">
+    <div class="slide is-active" data-slide><img src="assets/portico.jpg" alt="Ônibus da COLETUR no pórtico de entrada de Guarani das Missões" class="w-full h-full object-cover"></div>
+    <div class="slide" data-slide><img src="assets/grupo-onibus.jpg" alt="Grupo de passageiros ao lado do ônibus da COLETUR em parada de viagem" class="w-full h-full object-cover"></div>
+    <div class="slide" data-slide><img src="assets/decada.jpg" alt="Ônibus da COLETUR na estrada ao pôr do sol, em 16 anos de história" class="w-full h-full object-cover"></div>
+    <div class="slide" data-slide><img src="assets/camboriu.jpg" alt="Pacote de verão para Balneário Camboriú, em Santa Catarina" class="w-full h-full object-cover"></div>
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/25"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/40"></div>
+
+  <svg class="absolute -left-32 top-1/2 -translate-y-1/2 w-[720px] h-[720px] opacity-[.13] pointer-events-none" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <path d="M170 40a80 80 0 1 0 0 120" stroke="#29b6e8" stroke-width="16" stroke-linecap="round"/>
+    <path d="M150 62a52 52 0 1 0 0 76" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  </svg>
+
+  <div class="relative w-full max-w-7xl mx-auto px-5 lg:px-8 pt-32 pb-12">
+    <p class="eyebrow text-cyan mb-5">Guarani das Missões &middot; Rio Grande do Sul</p>
+    <h1 class="font-display font-extrabold text-white leading-[1.02] text-[2.6rem] sm:text-6xl lg:text-[4.6rem] max-w-4xl">
+      Viajar é mais do que<br>chegar ao <span class="text-cyan">destino</span>.
+    </h1>
+    <p class="mt-6 max-w-xl text-lg lg:text-xl text-silver font-light leading-relaxed">
+      Poltronas leito, motoristas experientes e uma equipe que acompanha cada quilômetro. Reservas abertas para o Verão 2027 em Santa Catarina.
+    </p>
+
+    <form id="buscaForm" class="glass mt-10 rounded-2xl p-4 md:p-5 shadow-lift max-w-4xl" novalidate>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+        <div class="md:col-span-1">
+          <label for="origem" class="eyebrow text-navy/60 block mb-2">Origem</label>
+          <select id="origem" name="origem" class="w-full bg-white/80 border border-navy/10 rounded-xl px-4 h-12 text-[15px]">
+            <option>Guarani das Missões</option>
+            <option>Santo Ângelo</option>
+            <option>Ijuí</option>
+            <option>Cruz Alta</option>
+            <option>Outro município</option>
+          </select>
+        </div>
+        <div class="md:col-span-1">
+          <label for="destino" class="eyebrow text-navy/60 block mb-2">Destino</label>
+          <input id="destino" name="destino" type="text" placeholder="Ciudad del Este" class="w-full bg-white/80 border border-navy/10 rounded-xl px-4 h-12 text-[15px] placeholder:text-navy/35">
+        </div>
+        <div class="md:col-span-1">
+          <label for="data" class="eyebrow text-navy/60 block mb-2">Data da viagem</label>
+          <input id="data" name="data" type="date" class="w-full bg-white/80 border border-navy/10 rounded-xl px-4 h-12 text-[15px]">
+        </div>
+        <div class="md:col-span-1 flex items-end">
+          <button type="submit" class="w-full h-12 bg-royal hover:bg-navy text-white font-display font-semibold rounded-xl transition-colors">Buscar excursão</button>
+        </div>
+      </div>
+      <p id="buscaMsg" class="hidden mt-3 text-sm text-navy/70"></p>
+    </form>
+
+    <div class="mt-10 flex items-center gap-5">
+      <button id="prevSlide" class="w-11 h-11 rounded-full border border-white/30 text-white grid place-items-center hover:bg-white hover:text-navy transition" aria-label="Slide anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button id="nextSlide" class="w-11 h-11 rounded-full border border-white/30 text-white grid place-items-center hover:bg-white hover:text-navy transition" aria-label="Próximo slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="flex items-center gap-2" id="dots" role="tablist" aria-label="Selecionar imagem"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PACOTES DE VERÃO ================= -->
+<section id="verao" class="py-24 lg:py-32 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-14">
+      <p class="eyebrow text-royal arc-mark pl-6 mb-4">Temporada 2027</p>
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight">Pacotes de verão em Santa Catarina</h2>
+      <p class="mt-5 text-lg text-navy/65 font-light">Ônibus leito, hotel e refeições no mesmo pacote. Reservas abertas com vagas limitadas.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-7">
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift border border-navy/5 reveal flex flex-col">
+        <div class="card-media relative h-64">
+          <img src="assets/itapema.jpg" alt="Pacote de verão 2027 para Itapema e Meia Praia, em Santa Catarina" loading="lazy" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-gold text-navy text-xs font-display font-bold px-3 py-1.5 rounded-full">7 dias</span>
+        </div>
+        <div class="p-7 lg:p-9 flex flex-col flex-1">
+          <p class="eyebrow text-royal mb-3">24/01 a 31/01/2027 &middot; Itapema SC</p>
+          <h3 class="font-display font-bold text-2xl lg:text-3xl mb-4">Meia Praia, com Beto Carrero e Cristo Luz</h3>
+          <ul class="space-y-2.5 text-navy/70 mb-7">
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Hospedagem a 180 metros da praia, quartos com ar-condicionado</li>
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Três refeições por dia: café, almoço e jantar</li>
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Deslocamento incluso para o Beto Carrero World e o Cristo Luz</li>
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Ida e volta em ônibus da frota COLETUR</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between pt-6 border-t border-navy/10">
+            <div>
+              <p class="eyebrow text-navy/45">Valor do pacote</p>
+              <p class="font-display font-bold text-lg">Sob consulta</p>
+            </div>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20pacote%20de%20Ver%C3%A3o%202027%20em%20Itapema%20(24%2F01%20a%2031%2F01)." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold text-sm px-6 py-3.5 rounded-full transition-colors">Garantir vaga</a>
+          </div>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift border border-navy/5 reveal flex flex-col">
+        <div class="card-media relative h-64">
+          <img src="assets/camboriu.jpg" alt="Pacote de verão 2027 para Balneário Camboriú, em Santa Catarina" loading="lazy" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-gold text-navy text-xs font-display font-bold px-3 py-1.5 rounded-full">6 dias</span>
+        </div>
+        <div class="p-7 lg:p-9 flex flex-col flex-1">
+          <p class="eyebrow text-royal mb-3">16/02 a 23/02/2027 &middot; Balneário Camboriú SC</p>
+          <h3 class="font-display font-bold text-2xl lg:text-3xl mb-4">Balneário Camboriú com o Hotel Negrini</h3>
+          <ul class="space-y-2.5 text-navy/70 mb-7">
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Hospedagem no Hotel Negrini</li>
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Café da manhã e almoço inclusos</li>
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Ônibus leito turismo com serviço de bordo</li>
+            <li class="flex gap-3"><span class="text-cyan mt-1">&#10003;</span>Internet Starlink durante o trajeto</li>
+          </ul>
+          <div class="mt-auto flex items-center justify-between pt-6 border-t border-navy/10">
+            <div>
+              <p class="eyebrow text-navy/45">Valor do pacote</p>
+              <p class="font-display font-bold text-lg">Sob consulta</p>
+            </div>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20garantir%20minha%20vaga%20no%20pacote%20de%20Ver%C3%A3o%202027%20em%20Balne%C3%A1rio%20Cambori%C3%BA%20(16%2F02%20a%2023%2F02)." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold text-sm px-6 py-3.5 rounded-full transition-colors">Garantir vaga</a>
+          </div>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRÓXIMAS VIAGENS ================= -->
+<section id="viagens" class="py-24 lg:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-14">
+      <p class="eyebrow text-royal arc-mark pl-6 mb-4">Agenda aberta</p>
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight">Próximas viagens e excursões</h2>
+      <p class="mt-5 text-lg text-navy/65 font-light">Reserve pelo WhatsApp e garanta a poltrona. Vagas limitadas por saída.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-7">
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift border border-navy/5 reveal">
+        <div class="card-media relative h-56">
+          <img src="assets/paraguai.jpg" alt="Excursão de compras em Ciudad del Este, Paraguai" loading="lazy" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-gold text-navy text-xs font-display font-bold px-3 py-1.5 rounded-full">Compras</span>
+        </div>
+        <div class="p-7">
+          <p class="eyebrow text-royal mb-3">09 de outubro de 2026</p>
+          <h3 class="font-display font-bold text-2xl mb-3">Compras no Paraguai</h3>
+          <p class="text-navy/65 leading-relaxed mb-5">Ciudad del Este em bate e volta, com economia real, conforto no trajeto e acompanhamento da equipe na fronteira.</p>
+          <div class="flex items-center justify-between pt-5 border-t border-navy/10">
+            <div>
+              <p class="eyebrow text-navy/45">Valor</p>
+              <p class="font-display font-bold text-lg">Sob consulta</p>
+            </div>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20reservar%20a%20excurs%C3%A3o%20de%20Compras%20no%20Paraguai%20(Ciudad%20del%20Este)%20em%2009%2F10%2F2026." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold text-sm px-5 py-3 rounded-full transition-colors">Reservar</a>
+          </div>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift border border-navy/5 reveal">
+        <div class="card-media relative h-56">
+          <img src="assets/rivera.jpg" alt="Excursão de compras nos free shops de Rivera, no Uruguai" loading="lazy" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-gold text-navy text-xs font-display font-bold px-3 py-1.5 rounded-full">Compras</span>
+        </div>
+        <div class="p-7">
+          <p class="eyebrow text-royal mb-3">09 de outubro de 2026 &middot; Uruguai</p>
+          <h3 class="font-display font-bold text-2xl mb-3">Compras em Rivera</h3>
+          <p class="text-navy/65 leading-relaxed mb-5">Os melhores free shops da fronteira, com preços imbatíveis e tempo livre suficiente para aproveitar as lojas sem correria.</p>
+          <div class="flex items-center justify-between pt-5 border-t border-navy/10">
+            <div>
+              <p class="eyebrow text-navy/45">Valor</p>
+              <p class="font-display font-bold text-lg">Sob consulta</p>
+            </div>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20reservar%20a%20excurs%C3%A3o%20de%20Compras%20em%20Rivera%20(Uruguai)%20em%2009%2F10%2F2026." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold text-sm px-5 py-3 rounded-full transition-colors">Reservar</a>
+          </div>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift border border-navy/5 reveal">
+        <div class="card-media relative h-56">
+          <img src="assets/gremio.jpg" alt="Excursão para o Grenal, Grêmio x Internacional, na Arena do Grêmio em 11 de outubro" loading="lazy" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-cyan text-navy text-xs font-display font-bold px-3 py-1.5 rounded-full">Esportivo</span>
+        </div>
+        <div class="p-7">
+          <p class="eyebrow text-royal mb-3">11 de outubro &middot; Arena do Grêmio</p>
+          <h3 class="font-display font-bold text-2xl mb-3">Grenal na Arena</h3>
+          <p class="text-navy/65 leading-relaxed mb-5">Grêmio x Internacional em parceria com a Borrachos Noroeste. Embarques em Guarani das Missões, Santo Ângelo, Ijuí e Cruz Alta, com retorno logo após o apito final.</p>
+          <div class="flex items-center justify-between pt-5 border-t border-navy/10">
+            <div>
+              <p class="eyebrow text-navy/45">Valor</p>
+              <p class="font-display font-bold text-lg">Sob consulta</p>
+            </div>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20reservar%20a%20excurs%C3%A3o%20para%20o%20Grenal%20na%20Arena%20do%20Gr%C3%AAmio%20em%2011%2F10." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold text-sm px-5 py-3 rounded-full transition-colors">Reservar</a>
+          </div>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift border border-navy/5 reveal">
+        <div class="card-media relative h-56">
+          <img src="assets/marlon-santos.jpg" alt="Excursão ao Centro Mediúnico Marlon Santos em Cachoeira do Sul" loading="lazy" class="w-full h-full object-cover">
+          <span class="absolute top-4 left-4 bg-white text-navy text-xs font-display font-bold px-3 py-1.5 rounded-full">Religioso</span>
+        </div>
+        <div class="p-7">
+          <p class="eyebrow text-royal mb-3">Cachoeira do Sul &middot; RS</p>
+          <h3 class="font-display font-bold text-2xl mb-3">Centro Mediúnico Marlon Santos</h3>
+          <p class="text-navy/65 leading-relaxed mb-5">Saídas periódicas com horários pensados para quem vai e volta no mesmo dia. Consulte o calendário do mês.</p>
+          <div class="flex items-center justify-between pt-5 border-t border-navy/10">
+            <div>
+              <p class="eyebrow text-navy/45">Próximas datas</p>
+              <p class="font-display font-bold text-lg">Sob consulta</p>
+            </div>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20a%20excurs%C3%A3o%20ao%20Centro%20Medi%C3%BAnico%20Marlon%20Santos%2C%20em%20Cachoeira%20do%20Sul." target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold text-sm px-5 py-3 rounded-full transition-colors">Reservar</a>
+          </div>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative md:col-span-2 bg-navy text-white rounded-2xl overflow-hidden shadow-lift reveal">
+        <div class="grid lg:grid-cols-2">
+          <div class="card-media relative h-64 lg:h-auto min-h-[280px]">
+            <img src="assets/grupo-onibus.jpg" alt="Grupo em frente ao ônibus fretado da COLETUR" loading="lazy" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy/70 lg:to-navy"></div>
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center">
+            <p class="eyebrow text-gold mb-4">Data e roteiro definidos por você</p>
+            <h3 class="font-display font-bold text-3xl lg:text-4xl mb-4">Fretamento de ônibus turismo</h3>
+            <p class="text-silver/85 font-light leading-relaxed mb-7 max-w-lg">Grupos, formaturas, empresas, romarias e eventos. Montamos o roteiro, os pontos de parada e o orçamento conforme o número de passageiros.</p>
+            <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20fretamento%20de%20%C3%B4nibus%20com%20a%20COLETUR." target="_blank" rel="noopener" class="self-start inline-flex items-center gap-2 bg-gold hover:bg-white text-navy font-display font-bold px-7 py-4 rounded-full transition-colors">Pedir orçamento</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROTA DE EMBARQUES (assinatura) ================= -->
+<section class="bg-navy-700 text-white py-20 relative overflow-hidden">
+  <svg class="absolute -right-40 -top-24 w-[560px] h-[560px] opacity-[.08]" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <path d="M170 40a80 80 0 1 0 0 120" stroke="#29b6e8" stroke-width="18" stroke-linecap="round"/>
+  </svg>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+    <div class="reveal mb-12 max-w-xl">
+      <p class="eyebrow text-cyan mb-4">Pontos de embarque</p>
+      <h2 class="font-display font-bold text-3xl lg:text-4xl">A rota passa perto de você</h2>
+      <p class="mt-4 text-silver/75 font-light">Nas excursões esportivas, o ônibus recolhe passageiros nestas quatro cidades antes de seguir para a capital.</p>
+    </div>
+
+    <div class="relative reveal">
+      <div class="route-line hidden md:block absolute top-[13px] left-[6%] right-[6%] h-[3px] opacity-60"></div>
+      <ol class="grid grid-cols-2 md:grid-cols-5 gap-8 relative">
+        <li class="route-stop text-center"><span class="pin block w-7 h-7 mx-auto rounded-full border-[3px] border-cyan bg-navy-700"></span><p class="mt-4 font-display font-semibold">Guarani das Missões</p><p class="text-xs text-silver/55 mt-1">Base da COLETUR</p></li>
+        <li class="route-stop text-center"><span class="pin block w-7 h-7 mx-auto rounded-full border-[3px] border-cyan bg-navy-700"></span><p class="mt-4 font-display font-semibold">Santo Ângelo</p><p class="text-xs text-silver/55 mt-1">2º embarque</p></li>
+        <li class="route-stop text-center"><span class="pin block w-7 h-7 mx-auto rounded-full border-[3px] border-cyan bg-navy-700"></span><p class="mt-4 font-display font-semibold">Ijuí</p><p class="text-xs text-silver/55 mt-1">3º embarque</p></li>
+        <li class="route-stop text-center"><span class="pin block w-7 h-7 mx-auto rounded-full border-[3px] border-cyan bg-navy-700"></span><p class="mt-4 font-display font-semibold">Cruz Alta</p><p class="text-xs text-silver/55 mt-1">4º embarque</p></li>
+        <li class="route-stop text-center"><span class="pin block w-7 h-7 mx-auto rounded-full bg-gold border-[3px] border-gold"></span><p class="mt-4 font-display font-semibold text-gold">Porto Alegre</p><p class="text-xs text-silver/55 mt-1">Arena / Beira-Rio</p></li>
+      </ol>
+    </div>
+
+    <p class="mt-10 text-sm text-silver/60 reveal">Horários de cada ponto confirmados no grupo da viagem, sempre 24 h antes da saída.</p>
+  </div>
+</section>
+
+<!-- ================= DIFERENCIAIS ================= -->
+<section id="servicos" class="py-24 lg:py-32 bg-silver/40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal max-w-2xl mb-14">
+      <p class="eyebrow text-royal arc-mark pl-6 mb-4">Conforto e segurança</p>
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight">O que faz a diferença a bordo</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="feature glass rounded-2xl p-8 reveal">
+        <div class="feature-ico w-14 h-14 rounded-2xl bg-navy/5 text-royal grid place-items-center mb-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a3 3 0 0 1 3 3v7H6z"/><path d="M6 14h13a2 2 0 0 1 2 2v3"/><path d="M4 19v-9a2 2 0 0 1 2-2"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Poltronas leito e semileito</h3>
+        <p class="text-navy/60 leading-relaxed">Reclinação ampla, apoio de pernas e espaço entre fileiras para viagens longas.</p>
+      </div>
+
+      <div class="feature glass rounded-2xl p-8 reveal">
+        <div class="feature-ico w-14 h-14 rounded-2xl bg-navy/5 text-royal grid place-items-center mb-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M12 20h.01"/><path d="M2 9.5a15 15 0 0 1 20 0"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Frota 100% Starlink</h3>
+        <p class="text-navy/60 leading-relaxed">Internet de alta velocidade via satélite, tomada USB individual e ar-condicionado em toda a frota.</p>
+      </div>
+
+      <div class="feature glass rounded-2xl p-8 reveal">
+        <div class="feature-ico w-14 h-14 rounded-2xl bg-navy/5 text-royal grid place-items-center mb-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Motoristas experientes</h3>
+        <p class="text-navy/60 leading-relaxed">Profissionais habilitados para transporte de passageiros e seguro viagem incluso.</p>
+      </div>
+
+      <div class="feature glass rounded-2xl p-8 reveal">
+        <div class="feature-ico w-14 h-14 rounded-2xl bg-navy/5 text-royal grid place-items-center mb-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L3 20.5l1.9-6.3A8 8 0 1 1 21 11.5z"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-xl mb-2">Atendimento do início ao fim</h3>
+        <p class="text-navy/60 leading-relaxed">Da reserva ao desembarque, você fala direto com quem organiza a viagem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FROTA STARLINK ================= -->
+<section class="relative bg-navy text-white overflow-hidden">
+  <div class="grid lg:grid-cols-2">
+    <div class="relative min-h-[320px] lg:min-h-[520px]">
+      <img src="assets/starlink.jpg" alt="Ônibus da COLETUR com internet Starlink a bordo" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-navy/90 via-navy/30 to-transparent"></div>
+    </div>
+    <div class="p-10 lg:p-20 flex flex-col justify-center reveal">
+      <p class="eyebrow text-gold mb-5">Novidade a bordo</p>
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mb-6">Frota 100% Starlink</h2>
+      <p class="text-lg text-silver/80 font-light leading-relaxed mb-8 max-w-lg">
+        Internet de alta velocidade via satélite em todos os ônibus, do embarque ao destino. Funciona onde o sinal de celular não chega: na estrada, na serra e na fronteira.
+      </p>
+      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-silver/75 mb-10">
+        <li class="flex gap-3"><span class="text-cyan">&#10003;</span>Conexão durante toda a viagem</li>
+        <li class="flex gap-3"><span class="text-cyan">&#10003;</span>Streaming e chamadas de vídeo</li>
+        <li class="flex gap-3"><span class="text-cyan">&#10003;</span>Tomada USB em cada poltrona</li>
+        <li class="flex gap-3"><span class="text-cyan">&#10003;</span>Sem custo adicional</li>
+      </ul>
+      <a href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20frota%20com%20Starlink%20da%20COLETUR." target="_blank" rel="noopener" class="self-start inline-flex items-center gap-2 bg-gold hover:bg-white text-navy font-display font-bold px-7 py-4 rounded-full transition-colors">Viajar conectado</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section id="sobre" class="py-24 lg:py-32 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <div class="reveal relative">
+      <img src="assets/grupo-onibus.jpg" alt="Passageiros e equipe da COLETUR durante parada de viagem" loading="lazy" class="rounded-2xl shadow-lift w-full">
+      <div class="glass-dark absolute -bottom-6 -right-2 lg:-right-8 rounded-2xl px-7 py-6 text-white max-w-[230px]">
+        <p class="font-display font-extrabold text-4xl text-gold">16</p>
+        <p class="text-sm text-silver/80 mt-1 leading-snug">anos de história, confiança e excelência</p>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow text-royal arc-mark pl-6 mb-4">Sobre nós</p>
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight mb-6">Mais que uma viagem,<br>é sobre viver.</h2>
+      <p class="text-lg text-navy/65 font-light leading-relaxed mb-5">
+        São 16 anos movendo sonhos pelas estradas. A COLETUR nasceu em Guarani das Missões levando gente da região para as compras no Paraguai e no Uruguai, para os jogos na capital e para os compromissos que não podem esperar. Cada saída é planejada por quem conhece a estrada de ponta a ponta.
+      </p>
+      <p class="text-lg text-navy/65 font-light leading-relaxed mb-8">
+        É viver experiências, criar memórias e transformar o caminho em parte da história.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#viagens" class="inline-flex items-center gap-2 bg-navy hover:bg-royal text-white font-display font-semibold px-7 py-4 rounded-full transition-colors">Ver próximas saídas</a>
+        <a href="https://www.instagram.com/cole.tur" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-navy/20 hover:border-navy font-display font-semibold px-7 py-4 rounded-full transition-colors">@cole.tur</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog" class="py-24 lg:py-32 bg-silver/40">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="reveal flex flex-wrap items-end justify-between gap-6 mb-14">
+      <div class="max-w-xl">
+        <p class="eyebrow text-royal arc-mark pl-6 mb-4">Blog da estrada</p>
+        <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight">Dicas de quem viaja junto</h2>
+      </div>
+      <a href="#contato" class="font-display font-semibold text-royal hover:text-navy transition">Ver todos os artigos &rarr;</a>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-7">
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift reveal">
+        <div class="card-media h-48"><img src="assets/paraguai.jpg" alt="Sacolas de compras em Ciudad del Este" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-7">
+          <p class="eyebrow text-navy/45 mb-3">Compras</p>
+          <h3 class="font-display font-bold text-xl mb-3 leading-snug">Dicas de compras no Paraguai</h3>
+          <p class="text-navy/60 leading-relaxed mb-5">Cota permitida, o que declarar na volta e como organizar as sacolas para o bagageiro.</p>
+          <a href="#contato" class="font-display font-semibold text-royal hover:text-navy transition">Ler mais &rarr;</a>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift reveal">
+        <div class="card-media h-48"><img src="assets/hero-estrada.jpg" alt="Ônibus da COLETUR em viagem de longa distância" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-7">
+          <p class="eyebrow text-navy/45 mb-3">Preparação</p>
+          <h3 class="font-display font-bold text-xl mb-3 leading-snug">Como se preparar para viagens longas de ônibus</h3>
+          <p class="text-navy/60 leading-relaxed mb-5">Bagagem de mão, roupas em camadas e o que ajuda a dormir bem na poltrona leito.</p>
+          <a href="#contato" class="font-display font-semibold text-royal hover:text-navy transition">Ler mais &rarr;</a>
+        </div>
+        <span class="sweep"></span>
+      </article>
+
+      <article class="card relative bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-lift reveal">
+        <div class="card-media h-48"><img src="assets/grupo-onibus.jpg" alt="Grupo de excursão em parada durante roteiro pelo Rio Grande do Sul" loading="lazy" class="w-full h-full object-cover"></div>
+        <div class="p-7">
+          <p class="eyebrow text-navy/45 mb-3">Roteiros</p>
+          <h3 class="font-display font-bold text-xl mb-3 leading-snug">Roteiros pelo Rio Grande do Sul</h3>
+          <p class="text-navy/60 leading-relaxed mb-5">Das Missões à Serra: destinos que rendem bons dias de viagem saindo da região.</p>
+          <a href="#contato" class="font-display font-semibold text-royal hover:text-navy transition">Ler mais &rarr;</a>
+        </div>
+        <span class="sweep"></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPOIMENTOS ================= -->
+<section class="py-24 lg:py-32 bg-navy text-white relative overflow-hidden">
+  <svg class="absolute -left-48 bottom-0 w-[620px] h-[620px] opacity-[.07]" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <path d="M170 40a80 80 0 1 0 0 120" stroke="#ffffff" stroke-width="18" stroke-linecap="round"/>
+  </svg>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+    <div class="reveal max-w-2xl mb-14">
+      <p class="eyebrow text-gold mb-4">Quem já viajou</p>
+      <h2 class="font-display font-extrabold text-4xl lg:text-5xl leading-tight">Avaliações dos passageiros</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-7">
+      <figure class="glass-dark rounded-2xl p-8 reveal">
+        <div class="flex gap-1 text-gold mb-5" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote class="text-silver/85 font-light leading-relaxed mb-7">Saímos no horário certinho e o ônibus estava impecável. Foi minha terceira viagem para o Paraguai com eles e não troco.</blockquote>
+        <figcaption class="flex items-center gap-4">
+          <span class="w-11 h-11 rounded-full bg-cyan text-navy grid place-items-center font-display font-bold">MS</span>
+          <div><p class="font-display font-semibold">Marisa S.</p><p class="text-xs text-silver/55">Santo Ângelo</p></div>
+        </figcaption>
+      </figure>
+
+      <figure class="glass-dark rounded-2xl p-8 reveal">
+        <div class="flex gap-1 text-gold mb-5" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote class="text-silver/85 font-light leading-relaxed mb-7">Fui no Grenal com a turma e a organização foi impecável. Motorista atencioso e retorno tranquilo depois do jogo.</blockquote>
+        <figcaption class="flex items-center gap-4">
+          <span class="w-11 h-11 rounded-full bg-gold text-navy grid place-items-center font-display font-bold">JP</span>
+          <div><p class="font-display font-semibold">Jônatas P.</p><p class="text-xs text-silver/55">Ijuí</p></div>
+        </figcaption>
+      </figure>
+
+      <figure class="glass-dark rounded-2xl p-8 reveal">
+        <div class="flex gap-1 text-gold mb-5" aria-label="5 de 5 estrelas">★★★★★</div>
+        <blockquote class="text-silver/85 font-light leading-relaxed mb-7">Ônibus limpo, poltrona confortável e a equipe sempre simpática. Recomendo para quem viaja com a família.</blockquote>
+        <figcaption class="flex items-center gap-4">
+          <span class="w-11 h-11 rounded-full bg-white text-navy grid place-items-center font-display font-bold">RL</span>
+          <div><p class="font-display font-semibold">Rejane L.</p><p class="text-xs text-silver/55">Guarani das Missões</p></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="py-20 lg:py-28 bg-white">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8">
+    <div class="reveal rounded-3xl bg-silver/50 border border-navy/5 p-8 md:p-14 text-center">
+      <p class="eyebrow text-royal mb-4">Newsletter</p>
+      <h2 class="font-display font-extrabold text-3xl lg:text-4xl leading-tight mb-4">Receba roteiros exclusivos e promoções em primeira mão</h2>
+      <p class="text-navy/60 font-light mb-8 max-w-xl mx-auto">Um e-mail por mês com as próximas saídas e as vagas que ainda restam.</p>
+
+      <form id="newsForm" class="max-w-2xl mx-auto grid sm:grid-cols-[1fr_1fr_auto] gap-3 text-left" novalidate>
+        <div>
+          <label for="nome" class="sr-only">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required class="w-full bg-white border border-navy/10 rounded-xl px-4 h-13 py-3.5 text-[15px] placeholder:text-navy/35">
+        </div>
+        <div>
+          <label for="email" class="sr-only">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seu@email.com" required class="w-full bg-white border border-navy/10 rounded-xl px-4 h-13 py-3.5 text-[15px] placeholder:text-navy/35">
+        </div>
+        <button type="submit" class="bg-navy hover:bg-royal text-white font-display font-semibold px-7 py-3.5 rounded-xl transition-colors">Quero receber</button>
+      </form>
+      <p id="newsMsg" role="status" class="hidden mt-4 text-sm font-medium"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RODAPÉ ================= -->
+<footer id="contato" class="bg-navy text-silver pt-20">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-12 pb-16">
+      <div class="lg:col-span-1">
+        <img src="assets/logo-coletur.png" alt="COLETUR Transporte e Turismo" class="h-12 w-auto mb-6 brightness-0 invert opacity-90">
+        <p class="text-silver/60 font-light leading-relaxed">Mais que uma viagem, é sobre viver.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="https://www.instagram.com/cole.tur" target="_blank" rel="noopener" aria-label="Instagram da COLETUR" class="w-11 h-11 rounded-full border border-white/15 grid place-items-center hover:bg-white hover:text-navy transition">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/5555997284701" target="_blank" rel="noopener" aria-label="WhatsApp da COLETUR" class="w-11 h-11 rounded-full border border-white/15 grid place-items-center hover:bg-white hover:text-navy transition">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.6-.1 1.4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-display font-semibold text-white mb-5">Navegação</h3>
+        <ul class="space-y-3 text-silver/60">
+          <li><a href="#verao" class="hover:text-cyan transition">Pacotes de verão 2027</a></li>
+          <li><a href="#viagens" class="hover:text-cyan transition">Próximos destinos</a></li>
+          <li><a href="#servicos" class="hover:text-cyan transition">Serviços</a></li>
+          <li><a href="#sobre" class="hover:text-cyan transition">Sobre nós</a></li>
+          <li><a href="#blog" class="hover:text-cyan transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-semibold text-white mb-5">Links úteis</h3>
+        <ul class="space-y-3 text-silver/60">
+          <li><a href="#" class="hover:text-cyan transition">Termos de serviço</a></li>
+          <li><a href="#" class="hover:text-cyan transition">Política de privacidade</a></li>
+          <li><a href="#" class="hover:text-cyan transition">Perguntas frequentes</a></li>
+          <li><a href="#" class="hover:text-cyan transition">Política de cancelamento</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display font-semibold text-white mb-5">Contato</h3>
+        <address class="not-italic space-y-3 text-silver/60">
+          <p>Rua João Klidzio, 619<br>Guarani das Missões &middot; RS</p>
+          <p><a href="https://wa.me/5555997284701" target="_blank" rel="noopener" class="hover:text-cyan transition">(55) 9 9728-4701</a></p>
+          <p><a href="mailto:coletto.turismo@gmail.com" class="hover:text-cyan transition">coletto.turismo@gmail.com</a></p>
+        </address>
+        <div class="mt-6 rounded-xl overflow-hidden border border-white/10">
+          <iframe title="Mapa da sede da COLETUR em Guarani das Missões" src="https://maps.google.com/maps?q=Rua%20Jo%C3%A3o%20Klidzio%2C%20619%2C%20Guarani%20das%20Miss%C3%B5es%2C%20RS&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="170" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 py-7 flex flex-col md:flex-row gap-3 justify-between text-sm text-silver/45">
+      <p>&copy; <span id="ano"></span> COLETUR Transporte e Turismo. Todos os direitos reservados.</p>
+      <p>Valores e datas sujeitos a alteração e confirmação de vagas.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= WHATSAPP FLUTUANTE ================= -->
+<a id="waFloat" href="https://wa.me/5555997284701?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20pr%C3%B3ximos%20pacotes%20da%20COLETUR."
+   target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white grid place-items-center shadow-lift hover:scale-105 transition-transform">
+  <span class="wa-ring absolute inset-0 rounded-full bg-[#25D366] -z-10"></span>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.2.1.6-.1 1.4z"/></svg>
+</a>
+
+<!-- ================= CHATBOT ================= -->
+<div class="fixed bottom-6 left-6 z-40">
+  <button id="chatToggle" aria-expanded="false" aria-controls="chatPanel" class="w-14 h-14 rounded-full bg-navy text-white grid place-items-center shadow-lift hover:bg-royal transition-colors" aria-label="Abrir atendimento rápido">
+    <svg id="chatIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L3 20.5l1.9-6.3A8 8 0 1 1 21 11.5z"/></svg>
+  </button>
+
+  <div id="chatPanel" class="absolute bottom-[70px] left-0 w-[320px] max-w-[calc(100vw-3rem)] rounded-2xl bg-white shadow-lift border border-navy/10 overflow-hidden" role="dialog" aria-label="Atendimento rápido COLETUR">
+    <div class="bg-navy text-white px-5 py-4 flex items-center justify-between">
+      <div>
+        <p class="font-display font-semibold text-sm">Atendimento rápido</p>
+        <p class="text-[11px] text-cyan">Respondemos em minutos</p>
+      </div>
+      <button id="chatClose" class="w-8 h-8 rounded-full hover:bg-white/15 grid place-items-center" aria-label="Fechar atendimento">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="chatLog" class="p-4 space-y-3 max-h-[280px] overflow-y-auto text-sm bg-silver/30"></div>
+    <div id="chatOptions" class="p-3 border-t border-navy/10 space-y-2 bg-white"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  /* Header: encolhe ao rolar */
+  var header = document.getElementById('header');
+  var headerInner = document.getElementById('headerInner');
+  window.addEventListener('scroll', function(){
+    var s = window.scrollY > 40;
+    headerInner.classList.toggle('h-[64px]', s);
+    headerInner.classList.toggle('h-[76px]', !s);
+    header.classList.toggle('shadow-lift', s);
+  }, {passive:true});
+
+  /* Menu mobile */
+  var menuBtn = document.getElementById('menuBtn'), mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ mobileMenu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded','false'); });
+  });
+
+  /* Carrossel do hero */
+  var slides = Array.prototype.slice.call(document.querySelectorAll('[data-slide]'));
+  var dotsBox = document.getElementById('dots');
+  var idx = 0, timer = null, DELAY = 6000;
+
+  slides.forEach(function(_, i){
+    var b = document.createElement('button');
+    b.className = 'dot rounded-full' + (i === 0 ? ' is-active' : '');
+    b.setAttribute('aria-label', 'Ir para o slide ' + (i+1));
+    b.addEventListener('click', function(){ go(i); });
+    dotsBox.appendChild(b);
+  });
+  var dots = Array.prototype.slice.call(dotsBox.children);
+
+  function go(n){
+    idx = (n + slides.length) % slides.length;
+    slides.forEach(function(s,i){ s.classList.toggle('is-active', i === idx); });
+    dots.forEach(function(d,i){ d.classList.toggle('is-active', i === idx); });
+    restart();
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(function(){ go(idx+1); }, DELAY); }
+  document.getElementById('nextSlide').addEventListener('click', function(){ go(idx+1); });
+  document.getElementById('prevSlide').addEventListener('click', function(){ go(idx-1); });
+  restart();
+
+  /* Busca rápida: monta a mensagem e abre o WhatsApp */
+  document.getElementById('buscaForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var origem = document.getElementById('origem').value;
+    var destino = document.getElementById('destino').value.trim();
+    var data = document.getElementById('data').value;
+    var msg = document.getElementById('buscaMsg');
+    if(!destino){
+      msg.textContent = 'Informe o destino para continuar.';
+      msg.className = 'mt-3 text-sm text-red-600 font-medium';
+      document.getElementById('destino').focus();
+      return;
+    }
+    var dataBR = data ? data.split('-').reverse().join('/') : 'a combinar';
+    var texto = 'Olá! Quero informações sobre uma viagem saindo de ' + origem + ' para ' + destino + ' na data ' + dataBR + '.';
+    msg.textContent = 'Abrindo o WhatsApp com os dados da sua busca...';
+    msg.className = 'mt-3 text-sm text-royal font-medium';
+    window.open('https://wa.me/5555997284701?text=' + encodeURIComponent(texto), '_blank');
+  });
+
+  /* Newsletter */
+  document.getElementById('newsForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var nome = document.getElementById('nome').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var msg = document.getElementById('newsMsg');
+    msg.classList.remove('hidden');
+    if(nome.length < 2){
+      msg.textContent = 'Escreva seu nome completo para continuar.';
+      msg.className = 'mt-4 text-sm font-medium text-red-600';
+      return;
+    }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){
+      msg.textContent = 'Esse e-mail parece incompleto. Confira e envie de novo.';
+      msg.className = 'mt-4 text-sm font-medium text-red-600';
+      return;
+    }
+    msg.textContent = 'Pronto, ' + nome.split(' ')[0] + '. Você vai receber as próximas saídas em primeira mão.';
+    msg.className = 'mt-4 text-sm font-medium text-royal';
+    e.target.reset();
+  });
+
+  /* Revelação ao rolar */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, {threshold:.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el, i){
+    el.style.transitionDelay = (i % 3) * 90 + 'ms';
+    io.observe(el);
+  });
+
+  /* Chatbot de atendimento rápido */
+  var WA = 'https://wa.me/5555997284701?text=';
+  var respostas = {
+    embarque: {
+      p: 'Horários de embarque',
+      r: 'Nas excursões esportivas o ônibus embarca em Guarani das Missões, Santo Ângelo, Ijuí e Cruz Alta. O horário exato de cada ponto é confirmado no grupo da viagem 24 h antes da saída.'
+    },
+    reserva: {
+      p: 'Como reservar',
+      r: 'A reserva é feita pelo WhatsApp: você escolhe a viagem, informa nome e ponto de embarque e a vaga fica garantida com o sinal.'
+    },
+    pagamento: {
+      p: 'Formas de pagamento',
+      r: 'Aceitamos Pix, dinheiro e cartão. Em algumas excursões é possível parcelar. Confirme as condições da saída que você escolheu.'
+    },
+    destinos: {
+      p: 'Próximos destinos',
+      r: 'Em 09/10 temos duas saídas de compras, Ciudad del Este e Rivera, e em 11/10 a excursão para o Grenal na Arena. Também estão abertos os pacotes de Verão 2027 para Itapema e Balneário Camboriú, além das excursões esportivas e do Centro Mediúnico Marlon Santos.'
+    }
+  };
+
+  var chatToggle = document.getElementById('chatToggle');
+  var chatPanel = document.getElementById('chatPanel');
+  var chatLog = document.getElementById('chatLog');
+  var chatOptions = document.getElementById('chatOptions');
+  var iniciado = false;
+
+  function balao(texto, deQuem){
+    var d = document.createElement('div');
+    d.className = deQuem === 'bot'
+      ? 'bg-white rounded-2xl rounded-tl-sm px-4 py-3 text-navy/80 shadow-sm max-w-[85%]'
+      : 'bg-navy text-white rounded-2xl rounded-tr-sm px-4 py-3 max-w-[85%] ml-auto';
+    d.textContent = texto;
+    chatLog.appendChild(d);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
+
+  function montaOpcoes(){
+    chatOptions.innerHTML = '';
+    Object.keys(respostas).forEach(function(k){
+      var b = document.createElement('button');
+      b.className = 'w-full text-left text-[13px] font-medium border border-navy/15 rounded-xl px-4 py-2.5 hover:bg-navy hover:text-white transition-colors';
+      b.textContent = respostas[k].p;
+      b.addEventListener('click', function(){
+        balao(respostas[k].p, 'user');
+        setTimeout(function(){ balao(respostas[k].r, 'bot'); }, 400);
+      });
+      chatOptions.appendChild(b);
+    });
+    var a = document.createElement('a');
+    a.href = WA + encodeURIComponent('Olá! Quero falar com um atendente da COLETUR.');
+    a.target = '_blank'; a.rel = 'noopener';
+    a.className = 'block text-center text-[13px] font-display font-semibold bg-[#25D366] text-white rounded-xl px-4 py-2.5 hover:brightness-95 transition';
+    a.textContent = 'Falar com um atendente';
+    chatOptions.appendChild(a);
+  }
+
+  function abreChat(abrir){
+    chatPanel.classList.toggle('is-open', abrir);
+    chatToggle.setAttribute('aria-expanded', String(abrir));
+    if(abrir && !iniciado){
+      iniciado = true;
+      balao('Olá! Aqui é a COLETUR. Sobre o que você quer saber?', 'bot');
+      montaOpcoes();
+    }
+  }
+
+  chatToggle.addEventListener('click', function(){ abreChat(!chatPanel.classList.contains('is-open')); });
+  document.getElementById('chatClose').addEventListener('click', function(){ abreChat(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') abreChat(false); });
+})();
+</script>
+</body>
+</html>
